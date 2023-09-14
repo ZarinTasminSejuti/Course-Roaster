@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "course_img": "https://i.ibb.co/JzX6fsS/Rectangle-2-1.png",
+      "title": "Introduction to C Programming",
+      "description": "C Programming is a foundational course teaching the basics of programming in the C language, emphasizing fundamental coding concepts and practices.",
+      "price": 15000,
+      "credit_time": 1
+    },
+    {
+      "id": 2,
+      "course_img": " https://i.ibb.co/ZhKrP7M/Rectangle-2-2.png",
+      "title": "Introduction to Algorithms",
+      "description": "Algorithms is a critical course in computer science that explores the design and analysis of algorithms, essential for solving complex computational problems efficiently.",
+      "price": 25000,
+      "credit_time": 2
+    },
+    {
+      "id": 3,
+      "course_img": " https://i.ibb.co/R6cLyGt/Rectangle-2-3.png",
+      "title": "Introduction to C++ for DSA",
+      "description": "C++ for DSA introduces the power of C++ in creating efficient data structures and algorithms, equipping learners with key skills for programming and problem-solving.",
+      "price": 10000,
+      "credit_time": 10
+    },
+    {
+      "id": 4,
+      "course_img": "https://i.ibb.co/SwrBsT1/Rectangle-2-4.png",
+      "title": "Basic Data Structures",
+      "description": "Basic Data Structures covers foundational structures like arrays and linked lists, crucial for organizing and managing data in software development and problem-solving scenarios.",
+      "price": 35000,
+      "credit_time": 5
+    },
+    {
+      "id": 5,
+      "course_img": "https://i.ibb.co/3z6QTCs/Rectangle-2-5.png",
+      "title": "Introduction to OOP Python",
+      "description": "OOP Python introduces Object-Oriented Programming concepts in Python, enabling learners to create scalable and maintainable software applications using modern design principles and techniques.",
+      "price": 19000,
+      "credit_time": 5
+    },
+    {
+      "id": 6,
+      "course_img": " https://i.ibb.co/nC21Rsd/Rectangle-2-6.png",
+      "title": "Software Engineering",
+      "description": "Software Engineering is a holistic discipline encompassing the entire software development lifecycle, teaching methodologies and practices for building robust, maintainable software systems.",
+      "price": 23000,
+      "credit_time": 2
+    },
+    {
+      "id": 7,
+      "course_img": " https://i.ibb.co/XXbjGQ2/Rectangle-2.png",
+      "title": "AWS, Cloud Computing",
+      "description": "AWS and Cloud Computing explore Amazon Web Services and cloud technologies, empowering learners to create scalable and cost-effective solutions for modern IT and web services.",
+      "price": 35000,
+      "credit_time": 5
+    },
+    {
+      "id": 8,
+      "course_img": "https://i.ibb.co/wwDVr9X/Rectangle-3-1.png",
+      "title": "Database (MySQL)",
+      "description": "Database (MySQL) focuses on MySQL, a popular relational database management system, teaching database design, management, and efficient data storage and retrieval techniques",
+      "price": 19000,
+      "credit_time": 5
+    },
+    {
+      "id": 9,
+      "course_img": " https://i.ibb.co/9Nmp21r/Rectangle-3.png",
+      "title": "Problem-Solving Part",
+      "description": "Problem-Solving Part hones analytical and algorithmic thinking skills with challenging exercises, preparing students for real-world problem-solving and algorithm development scenarios.",
+      "price": 23000,
+      "credit_time": 2
+    }
+  ]
+  
