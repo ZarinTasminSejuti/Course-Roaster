@@ -1,13 +1,25 @@
 import PropTypes from 'prop-types';
+// import { useState } from 'react';
 import { FaDollarSign, FaBookOpen } from 'react-icons/fa';
 
-const Course = ({ course }) => {
+
+const Course = ({ course,setTitle, titleArray }) => {
     const { course_img, title, description, price, credit_time } = course;
+
+    // const [select, setSelect] = useState([]);
+    
+
+    const handleAddSelect = () => {
+        const newArray = [...titleArray, title];
+        setTitle(newArray);
+       
+        
+    }
+   
+   
     return (
         <div className=''>
-           
-
-            
+       
             <div className='bg-white w-full h-full rounded-xl p-4'>
                 <div className=''>
                 <img src={course_img} alt="" />
@@ -20,7 +32,7 @@ const Course = ({ course }) => {
                     <FaBookOpen />
                     <p>Credit: {credit_time}hr</p>
                 </div>
-                <button className='btn text-white rounded-lg mt-5 py-2 bg-sky-600 w-full '>Select</button>
+                <button onClick={handleAddSelect}  className='btn text-white rounded-lg mt-5 py-2 bg-sky-600 w-full '>Select</button>
             </div>
 
             
@@ -32,6 +44,8 @@ const Course = ({ course }) => {
 
 Course.propTypes = {
     course: PropTypes.object.isRequired,
+    setTitle: PropTypes.func,
+    titleArray: PropTypes.array
 }
 
 
