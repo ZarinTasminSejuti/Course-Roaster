@@ -8,7 +8,10 @@ const Courses = () => {
     const [courses, setCourses] = useState([]);
    
     const [titleArray, setTitle] = useState([]);
-    console.log(titleArray);
+    // console.log(titleArray);
+   
+   
+    const [totalCredit, setTotalCredit] = useState(0);
 
    
 
@@ -24,7 +27,7 @@ const Courses = () => {
             {/* <h1>Courses: {courses.length}</h1> */}        
                 <div className="grid grid-cols-3 gap-5"> {/* card container */}        
                     {
-                        courses.map(course => <Course key={course.id} course={course} setTitle={setTitle} titleArray={titleArray}
+                        courses.map(course => <Course key={course.id} course={course} setTitle={setTitle} titleArray={titleArray} coursesArray={courses} setTotalCredit={setTotalCredit}
                         ></Course>)
                     }     
                 </div>    
@@ -37,23 +40,17 @@ const Courses = () => {
 
                 <ol className="text-slate-500 leading-7 mt-4 mb-6">
 
-                    {
-                        
-                    }
 
-
-
-
-                     {/* {
+                     {
                         titleArray.map((title,idx) => <li className="list-decimal list-inside text-left" key={idx}>{title}</li>)
-                    }  */}
+                    } 
                 </ol>
 
                 
                 
                 <hr />
 
-                <p className="my-4 text-left">Total Credit Hour: </p>
+                <p className="my-4 text-left">Total Credit Hour: {totalCredit}</p>
                 <hr />
                 <p className="my-4 text-left">Total Price: </p>
             </div>

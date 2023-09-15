@@ -1,34 +1,43 @@
 import PropTypes from 'prop-types';
-// import { useState } from 'react';
-// import { useState } from 'react';
 import { FaDollarSign, FaBookOpen } from 'react-icons/fa';
 
 
-const Course = ({ course,setTitle, titleArray }) => {
+
+const Course = ({ course,setTitle, titleArray,coursesArray , setTotalCredit}) => {
     const { course_img, title, description, price, credit_time } = course;
 
-     //for total credit Hour
-    // const [totalCredit, SetTotalCredit] = useState(0);
+ 
 
-    // const handleTotalCredit = () => {
-    //     let totalCredit = 0;
-    //     for (const total of course) {
-    //         totalCredit += total.credit_time;
-    //     }
-    //     SetTotalCredit(totalCredit);
-    // }
-    
+    const handleAddSelect = (coursesArray) => {
+       
+        const isExist = titleArray.find((titleValue) => titleValue == title)
+        // console.log(isExist);
+       
+        if (!isExist) {
 
-    const handleAddSelect = () => {
-        const newArray = [...titleArray, title];
-        setTitle(newArray);
-        
-    }
+            //total credit time calculation
+            let total = credit_time;
+
+            coursesArray.forEach((newCredit) => {
+                
+                total = total + newCredit.credit_time;
+
+            });
+            // console.log(total);
+
+
+            //remaining value counting
+            // const totalRemaining = 20 - total;
+            // console.log(totalRemaining);
+            setTotalCredit(total);
+            const newArray = [...titleArray, title];
+            setTitle(newArray);
+        } 
+    };
 
 
     return (
-        
-       
+          
             <div className='bg-white w-full h-full rounded-xl p-4'>
                 <div className=''>
                 <img src={course_img} alt="" />
@@ -41,7 +50,7 @@ const Course = ({ course,setTitle, titleArray }) => {
                     <FaBookOpen />
                     <p>Credit: {credit_time}hr</p>
                 </div>
-                <button onClick={handleAddSelect}  className='btn text-white rounded-lg mt-5 py-2 bg-[#2F80ED] w-full '>Select</button>
+                <button onClick={()=>handleAddSelect(coursesArray, setTotalCredit)}  className='btn text-white rounded-lg mt-5 py-2 bg-[#2F80ED] w-full '>Select</button>
             </div>
 
             
@@ -54,7 +63,9 @@ const Course = ({ course,setTitle, titleArray }) => {
 Course.propTypes = {
     course: PropTypes.object.isRequired,
     setTitle: PropTypes.func,
-    titleArray: PropTypes.array
+    titleArray: PropTypes.array,
+    coursesArray: PropTypes.array,
+   setTotalCredit: PropTypes.func
 }
 
 
