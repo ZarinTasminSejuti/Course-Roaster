@@ -3,33 +3,33 @@ import { FaDollarSign, FaBookOpen } from 'react-icons/fa';
 
 
 
-const Course = ({ course,setTitle, titleArray,coursesArray , setTotalCredit}) => {
-    const { course_img, title, description, price, credit_time } = course;
+const Course = ({ course,setTitle, titleArray, totalCredit, setTotalCredit, totalPrice, setTotalPrice, totalRemaining, setTotalRemaining}) => {
+const { course_img, title, description, price, credit_time } = course;
 
- 
 
-    const handleAddSelect = (coursesArray) => {
-       
+
+    const handleAddSelect = () => {
+
+     
+    
         const isExist = titleArray.find((titleValue) => titleValue == title)
-        // console.log(isExist);
-       
+
         if (!isExist) {
 
             //total credit time calculation
-            let total = credit_time;
 
-            coursesArray.forEach((newCredit) => {
-                
-                total = total + newCredit.credit_time;
+            totalCredit = totalCredit + credit_time;   
+            setTotalCredit(totalCredit);
+            
 
-            });
-            // console.log(total);
-
-
-            //remaining value counting
+            //total price calculation
+            totalPrice = totalPrice + price; 
+            setTotalPrice(totalPrice);
+           
+            //remaining value calculation
             // const totalRemaining = 20 - total;
             // console.log(totalRemaining);
-            setTotalCredit(total);
+            // setTotalCredit(total);
             const newArray = [...titleArray, title];
             setTitle(newArray);
         } 
@@ -50,7 +50,7 @@ const Course = ({ course,setTitle, titleArray,coursesArray , setTotalCredit}) =>
                     <FaBookOpen />
                     <p>Credit: {credit_time}hr</p>
                 </div>
-                <button onClick={()=>handleAddSelect(coursesArray, setTotalCredit)}  className='btn text-white rounded-lg mt-5 py-2 bg-[#2F80ED] w-full '>Select</button>
+                <button onClick={()=>handleAddSelect()}  className='btn text-white rounded-lg mt-5 py-2 bg-[#2F80ED] w-full '>Select</button>
             </div>
 
             
@@ -65,7 +65,10 @@ Course.propTypes = {
     setTitle: PropTypes.func,
     titleArray: PropTypes.array,
     coursesArray: PropTypes.array,
-   setTotalCredit: PropTypes.func
+    setTotalCredit: PropTypes.func,
+    totalCredit: PropTypes.number,
+    setTotalPrice: PropTypes.func,
+    totalPrice: PropTypes.number
 }
 
 
