@@ -59,6 +59,7 @@ const Courses = () => {
                 <hr />
                 <p className="my-4 text-left">Total Price: {totalPrice} USD</p>
             </div>
+            
         </div>
         
         

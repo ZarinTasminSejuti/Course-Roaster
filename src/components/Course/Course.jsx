@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import { FaDollarSign, FaBookOpen } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Course = ({ course,setTitle, titleArray, totalCredit, setTotalCredit, totalPrice, setTotalPrice, totalRemaining, setTotalRemaining}) => {
@@ -18,23 +20,21 @@ const Course = ({ course,setTitle, titleArray, totalCredit, setTotalCredit, tota
             
             //remaining value calculation
             totalRemaining = totalRemaining - credit_time;
-            console.log(totalRemaining);
+            // console.log(totalRemaining);
+
+            //total price calculation
+            totalPrice = totalPrice + price; 
+
             if (totalCredit > 20 && totalRemaining < 0) {
-                alert('Invalid');
+                toast('You can not add more course');
             } else {
                 setTotalCredit(totalCredit);
                 setTotalRemaining(totalRemaining);
-                            //title Display
+                //title Display
                 const newArray = [...titleArray, title];
                 setTitle(newArray);
-
-            }
-            
-            
-            //total price calculation
-            totalPrice = totalPrice + price; 
-            setTotalPrice(totalPrice);
-            
+                setTotalPrice(totalPrice);
+            }                
         } 
     };
 
@@ -52,9 +52,12 @@ const Course = ({ course,setTitle, titleArray, totalCredit, setTotalCredit, tota
                     <p>Price: {price}</p>
                     <FaBookOpen />
                     <p>Credit: {credit_time}hr</p>
-                </div>
-                <button onClick={()=>handleAddSelect()}  className='btn text-white rounded-lg mt-5 py-2 bg-[#2F80ED] w-full '>Select</button>
-            </div>          
+            </div>
+            <ToastContainer className='text-center' />
+            <button onClick={() => handleAddSelect()} className='btn text-white rounded-lg mt-5 py-2 bg-[#2F80ED] w-full '>Select</button>
+            
+        </div>    
+        
        
     );
 };
