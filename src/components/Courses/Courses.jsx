@@ -9,7 +9,7 @@ const Courses = () => {
     const [titleArray, setTitle] = useState([]);
     const [totalCredit, setTotalCredit] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
-    const [totalRemaining, setTotalRemaining] = useState(0);
+    const [totalRemaining, setTotalRemaining] = useState(20);
 
 
     useEffect(() => {
@@ -33,14 +33,15 @@ const Courses = () => {
                             totalCredit={totalCredit}
                             totalPrice={totalPrice}
                             setTotalPrice={setTotalPrice}
-                            totalRemaining={totalRemaining} setTotalRemaining={setTotalRemaining}
+                            totalRemaining={totalRemaining}
+                            setTotalRemaining={setTotalRemaining}
                         ></Course>)
                     }     
                 </div>    
             </div>
 
             <div className="bg-white rounded-xl drop-shadow-md p-6 h-fit w-1/4">
-                <h1 className="text-[#2F80ED] text-lg font-bold text-left">Credit Hour Remaining {20} hr</h1>
+                <h1 className="text-[#2F80ED] text-lg font-bold text-left">Credit Hour Remaining {totalRemaining} hr</h1>
                 <hr className="my-5" />
                 <h3 className="text-xl font-bold">Course Name</h3>
 
@@ -51,9 +52,7 @@ const Courses = () => {
                         titleArray.map((title,idx) => <li className="list-decimal list-inside text-left" key={idx}>{title}</li>)
                     } 
                 </ol>
-
-                
-                
+             
                 <hr />
 
                 <p className="my-4 text-left">Total Credit Hour: {totalCredit}</p>
