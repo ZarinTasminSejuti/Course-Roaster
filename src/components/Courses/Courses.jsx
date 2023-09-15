@@ -10,6 +10,8 @@ const Courses = () => {
     const [titleArray, setTitle] = useState([]);
     console.log(titleArray);
 
+   
+
     useEffect(() => {
         fetch('courses.json')
             .then(res => res.json())
@@ -18,7 +20,7 @@ const Courses = () => {
 
     return (
         <div className="flex">
-            <div className="md:w-3/4 drop-shadow-md p-2">
+            <div className="md:w-3/4 drop-shadow-md mx-2">
             {/* <h1>Courses: {courses.length}</h1> */}        
                 <div className="grid grid-cols-3 gap-5"> {/* card container */}        
                     {
@@ -28,18 +30,32 @@ const Courses = () => {
                 </div>    
             </div>
 
-            <div className="bg-amber-800 w-1/4">
-                <h1>Credit Hour Remaining hr</h1>
-                <hr />
-                <h3>Course Name</h3>
+            <div className="bg-white rounded-xl drop-shadow-md p-6 h-fit w-1/4">
+                <h1 className="text-[#2F80ED] text-lg font-bold text-left">Credit Hour Remaining hr</h1>
+                <hr className="my-5" />
+                <h3 className="text-xl font-bold">Course Name</h3>
+
+                <ol className="text-slate-500 leading-7 mt-4 mb-6">
+
+                    {
+                        
+                    }
+
+
+
+
+                     {/* {
+                        titleArray.map((title,idx) => <li className="list-decimal list-inside text-left" key={idx}>{title}</li>)
+                    }  */}
+                </ol>
+
                 
-                    
                 
                 <hr />
 
-                <p>Total Credit Hour: </p>
+                <p className="my-4 text-left">Total Credit Hour: </p>
                 <hr />
-                <p>Total Price: </p>
+                <p className="my-4 text-left">Total Price: </p>
             </div>
         </div>
         

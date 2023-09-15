@@ -1,24 +1,33 @@
 import PropTypes from 'prop-types';
 // import { useState } from 'react';
+// import { useState } from 'react';
 import { FaDollarSign, FaBookOpen } from 'react-icons/fa';
 
 
 const Course = ({ course,setTitle, titleArray }) => {
     const { course_img, title, description, price, credit_time } = course;
 
-    // const [select, setSelect] = useState([]);
+     //for total credit Hour
+    // const [totalCredit, SetTotalCredit] = useState(0);
+
+    // const handleTotalCredit = () => {
+    //     let totalCredit = 0;
+    //     for (const total of course) {
+    //         totalCredit += total.credit_time;
+    //     }
+    //     SetTotalCredit(totalCredit);
+    // }
     
 
     const handleAddSelect = () => {
         const newArray = [...titleArray, title];
         setTitle(newArray);
-       
         
     }
-   
-   
+
+
     return (
-        <div className=''>
+        
        
             <div className='bg-white w-full h-full rounded-xl p-4'>
                 <div className=''>
@@ -32,12 +41,12 @@ const Course = ({ course,setTitle, titleArray }) => {
                     <FaBookOpen />
                     <p>Credit: {credit_time}hr</p>
                 </div>
-                <button onClick={handleAddSelect}  className='btn text-white rounded-lg mt-5 py-2 bg-sky-600 w-full '>Select</button>
+                <button onClick={handleAddSelect}  className='btn text-white rounded-lg mt-5 py-2 bg-[#2F80ED] w-full '>Select</button>
             </div>
 
             
             
-        </div>
+       
     );
 };
 
