@@ -28,7 +28,6 @@ const Courses = () => {
                             course={course}
                             setTitle={setTitle}
                             titleArray={titleArray}
-                            coursesArray={courses}
                             setTotalCredit={setTotalCredit}
                             totalCredit={totalCredit}
                             totalPrice={totalPrice}
@@ -46,8 +45,6 @@ const Courses = () => {
                 <h3 className="text-xl font-bold">Course Name</h3>
 
                 <ol className="text-slate-500 leading-7 mt-4 mb-6">
-
-
                      {
                         titleArray.map((title,idx) => <li className="list-decimal list-inside text-left" key={idx}>{title}</li>)
                     } 
