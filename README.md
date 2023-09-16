@@ -30,19 +30,19 @@ In this project application, two essential react hooks; useState() and useEffect
 
 - Five useState() are used in this project. At first,
 
-1. const [courses, setCourses] = useState([]);
+1. **const [courses, setCourses] = useState([]);**
 By declaring a variable 'courses'. it is used for storing an array of all course details and 'setCourses' function is used for update the components with fetching all courses data. The initial state will be an empty array.
 
-2.  const [titleArray, setTitle] = useState([]);
+2. **const [titleArray, setTitle] = useState([]);**
 The 'titleArray' is holding the all course title data. 'setTitle' is doing some criteria by mapping to display the course title name and update the state. The initial state of the 'titleArray' will be an empty array.
 
-3.  const [totalCredit, setTotalCredit] = useState(0);
+3. **const [totalCredit, setTotalCredit] = useState(0);**
 The 'totalCredit' state variable is storing the credit time hour and the 'setTotalCredit' function is adding the credit time and update the 'totalCredit' state. Initially the state value will be zero.
 
-4. const [totalPrice, setTotalPrice] = useState(0);
+4. **const [totalPrice, setTotalPrice] = useState(0);**
 'totalPrice' variable is used to store course prices and the 'setTotalPrice' is adding total price which will selected by students. The initial state will be zero number.
 
-5. const [totalRemaining, setTotalRemaining] = useState(20);
+5. **const [totalRemaining, setTotalRemaining] = useState(20);**
 'totalRemaining' state variable is holding the remaining credit time which is initially set as 20. When student select course one by one then the 'setTotalRemaining' function is doing calculation and subtract value with credit time and the 'totalRemaining' is trigger the state variable and it will display the result in ui.
 
 
