@@ -5,3 +5,13 @@
   text-align: center;
 }
 
+
+/* responsive style for small device */
+
+@media screen and (max-width:425px) {
+
+  #root{
+    padding: 20px;
+  }
+ 
+  }

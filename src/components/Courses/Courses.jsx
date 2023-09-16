@@ -3,6 +3,7 @@ import { useState } from "react";
 import Course from "../Course/Course";
 
 
+
 const Courses = () => {
    
     const [courses, setCourses] = useState([]);
@@ -19,10 +20,10 @@ const Courses = () => {
     },[])
 
     return (
-        <div className="flex">
-            <div className="md:w-3/4 drop-shadow-md mx-2">
+        <div className="flex flex-col lg:flex-row">
+            <div className="lg:w-3/4 drop-shadow-md lg:mx-2">
             {/* <h1>Courses: {courses.length}</h1> */}        
-                <div className="grid grid-cols-3 gap-5"> {/* card container */}        
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5"> {/* card container */}        
                     {
                         courses.map(course => <Course key={course.id}
                             course={course}
@@ -39,7 +40,7 @@ const Courses = () => {
                 </div>    
             </div>
 
-            <div className="bg-white rounded-xl drop-shadow-md p-6 h-fit w-1/4">
+            <div className="bg-white rounded-xl drop-shadow-md p-6 h-fit mt-6 lg:mt-0 lg:w-1/4">
                 <h1 className="text-[#2F80ED] text-lg font-bold text-left">Credit Hour Remaining {totalRemaining} hr</h1>
                 <hr className="my-5" />
                 <h3 className="text-xl font-bold">Course Name</h3>
